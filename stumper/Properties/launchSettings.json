@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "stumper": {
+      "commandName": "Project",
+      "commandLineArgs": "40.78.15.78 Test Message"
+    }
+  }
+}
