@@ -16,6 +16,7 @@ using System.Net;
 using System.Text;
 using System;
 using System.Runtime.CompilerServices;
+using System.Diagnostics.Contracts;
 
 /// <summary>
 /// The stumper namespace.
@@ -50,10 +51,21 @@ namespace stumper
         static async Task MainAsync(string[] args)
         {
             int x = 0;
+            string targetServer = args[0];
+            string messageToSend = args[1];
+            string faciltyString = args[2];
+            faciltyString = faciltyString.ToUpperInvariant();
+            string severityString = args[3];
+            severityString = severityString.ToUpperInvariant();
+            MessageHeader.FacilityType facility;
+            MessageHeader.SeverityLevel severity;
+            Enum.TryParse(faciltyString, out facility);
+            Enum.TryParse(severityString, out severity);
+
             while (true)
             {
-                string messageToSend = args[1] + " " + x.ToString();
-                Message message = new Message(messageToSend, Message.MessageStandards.RFC5424, MessageHeader.FacilityType.local4, MessageHeader.SeverityLevel.Debug);
+
+                Message message = new Message(messageToSend, Message.MessageStandards.RFC5424, facility, severity);
                 IPAddress ipAddress;
                 //check if we were given an IP address or a URL and set object appropriately
                 if (!IPAddress.TryParse(args[0], out ipAddress))
@@ -77,7 +89,7 @@ namespace stumper
 
                 client.Dispose();
                 x++;
-                Thread.Sleep(1000);
+                Thread.Sleep(5000);
             }
         }
     }

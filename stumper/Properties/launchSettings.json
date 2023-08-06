@@ -2,7 +2,7 @@
   "profiles": {
     "stumper": {
       "commandName": "Project",
-      "commandLineArgs": "40.78.15.78 Test Message"
+      "commandLineArgs": "40.78.15.78 \"[WAN_LOCAL-4000-D]IN=eth2 OUT= MAC=b4:fb:e4:29:f5:2b:00:01:5c:7a:60:46:08:00 SRC=91.240.118.71 DST=67.170.194.97 LEN=40 TOS=0x00 PREC=0x00 TTL=228 ID=17185 PROTO=TCP SPT=51980 DPT=4295 WINDOW=1024 RES=0x00 SYN URGP=0\" kernel Warning"
     }
   }
 }

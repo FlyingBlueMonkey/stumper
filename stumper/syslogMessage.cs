@@ -209,99 +209,99 @@ namespace stumper
             /// <summary>
             /// kernel messages
             /// </summary>
-            kern = 0,
+            KERN = 0,
             /// <summary>
             /// user-level messages
             /// </summary>
-            user = 1,
+            USER = 1,
             /// <summary>
             /// mail system
             /// </summary>
-            mail = 2,
+            MAIL = 2,
             /// <summary>
             /// system daemons
             /// </summary>
-            daemon = 3,
+            DAEMON = 3,
             /// <summary>
             /// security/authorization messages
             /// </summary>
-            auth = 4,
+            AUTH = 4,
             /// <summary>
             /// messages generated internally by syslogd
             /// </summary>
-            syslog = 5,
+            SYSLOG = 5,
             /// <summary>
             /// line printer subsystem
             /// </summary>
-            lpr = 6,
+            LPR = 6,
             /// <summary>
             /// network news subsystem
             /// </summary>
-            news = 7,
+            NEWS = 7,
             /// <summary>
             /// UUCP subsystem
             /// </summary>
-            uucp = 8,
+            UUCP = 8,
             /// <summary>
             /// clock daemon
             /// </summary>
-            cron = 9,
+            CRON = 9,
             /// <summary>
             /// security/authorization messages
             /// </summary>
-            authPriv = 10,
+            AUTHPRIV = 10,
             /// <summary>
             /// FTP daemon
             /// </summary>
-            ftp = 11,
+            FTP = 11,
             /// <summary>
             /// NTP subsystem
             /// </summary>
-            ntp = 12,
+            NTP = 12,
             /// <summary>
             /// log audit
             /// </summary>
-            audit = 13,
+            AUDIT = 13,
             /// <summary>
             /// log alert
             /// </summary>
-            alert = 14,
+            ALERT = 14,
             /// <summary>
             /// clock daemon (note 2)
             /// </summary>
-            clock = 15,
+            CLOCK = 15,
             /// <summary>
             /// local use 0  (local0)
             /// </summary>
-            local0 = 16,
+            LOCAL0 = 16,
             /// <summary>
             /// local use 1  (local1)
             /// </summary>
-            local1 = 17,
+            LOCAL1 = 17,
             /// <summary>
             /// local use 2  (local2)
             /// </summary>
-            local2 = 18,
+            LOCAL2 = 18,
             /// <summary>
             /// local use 3  (local3)
             /// </summary>
-            local3 = 19,
+            LOCAL3 = 19,
             /// <summary>
             /// local use 4  (local4)
             /// </summary>
-            local4 = 20,
+            LOCAL4 = 20,
             /// <summary>
             /// local use 5  (local5)
             /// </summary>
-            local5 = 21,
+            LOCAL5 = 21,
             /// <summary>
             /// local use 6  (local6)
             /// </summary>
-            local6 = 22,
+            LOCAL6 = 22,
             /// <summary>
             /// local use 7  (local7)
             /// </summary>
-            local7 = 23
+            LOCAL7 = 23
 
         }
         /// <summary>
@@ -312,35 +312,35 @@ namespace stumper
             /// <summary>
             /// System unusable
             /// </summary>
-            Emergency = 0,
+            EMERGENCY = 0,
             /// <summary>
             /// Action must be taken immediately
             /// </summary>
-            Alert = 1,
+            ALERT = 1,
             /// <summary>
             /// Critical conditions
             /// </summary>
-            Critical = 2,
+            CRITICAL = 2,
             /// <summary>
             /// Error conditions
             /// </summary>
-            Error = 3,
+            ERROR = 3,
             /// <summary>
             /// Warning conditions
             /// </summary>
-            Warning = 4,
+            WARNING = 4,
             /// <summary>
             /// Normal but significant conditions
             /// </summary>
-            Notice = 5,
+            NOTICE = 5,
             /// <summary>
             /// Informational messages
             /// </summary>
-            Informational = 6,
+            INFORMATIONAL = 6,
             /// <summary>
             /// Debug level messages
             /// </summary>
-            Debug = 7
+            DEBUG = 7
         }
         /// <summary>
         /// Gets or sets the facility.
