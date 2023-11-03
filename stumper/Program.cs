@@ -43,6 +43,17 @@ namespace stumper
 
         }
 
+        private static string EscapeCommandLineArguments(string[] args)
+        {
+                string arguments = "";
+                foreach (string arg in args)
+                {
+                    arguments += " \"" +
+                        arg.Replace("\\", "\\\\").Replace("\"", "\\\"") +
+                        "\"";
+                }
+                return arguments;
+        }
         /// <summary>
         /// Main as an asynchronous operation.
         /// </summary>
@@ -50,22 +61,41 @@ namespace stumper
         /// <returns>A Task representing the asynchronous operation.</returns>
         static async Task MainAsync(string[] args)
         {
+
+
             int x = 0;
+
             string targetServer = args[0];
             string messageToSend = args[1];
             string faciltyString = args[2];
             faciltyString = faciltyString.ToUpperInvariant();
             string severityString = args[3];
             severityString = severityString.ToUpperInvariant();
+            string messageStandard = args[4];
+            messageStandard = messageStandard.ToUpperInvariant();
             MessageHeader.FacilityType facility;
             MessageHeader.SeverityLevel severity;
-            Enum.TryParse(faciltyString, out facility);
-            Enum.TryParse(severityString, out severity);
+            Message.MessageStandards standard;
+            if (!Enum.TryParse(faciltyString, out facility))
+            {
+                //Default
+                facility = MessageHeader.FacilityType.LOCAL7;
+            };
+            if (!Enum.TryParse(severityString, out severity))
+            {
+                //Default
+                severity = MessageHeader.SeverityLevel.INFORMATIONAL;
+            };
+            if (!Enum.TryParse(messageStandard, out standard))
+            {
+                //Default
+                standard = Message.MessageStandards.RFC5424;
+            };   
 
             while (true)
             {
 
-                Message message = new Message(messageToSend, Message.MessageStandards.RFC5424, facility, severity);
+                Message message = new Message(messageToSend, standard, facility, severity);
                 IPAddress ipAddress;
                 //check if we were given an IP address or a URL and set object appropriately
                 if (!IPAddress.TryParse(args[0], out ipAddress))
@@ -91,6 +121,7 @@ namespace stumper
                 x++;
                 Thread.Sleep(5000);
             }
+
         }
     }
 }

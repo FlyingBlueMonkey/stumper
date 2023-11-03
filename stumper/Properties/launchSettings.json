@@ -2,7 +2,7 @@
   "profiles": {
     "stumper": {
       "commandName": "Project",
-      "commandLineArgs": "40.78.15.78 \"[WAN_LOCAL-4000-D]IN=eth2 OUT= MAC=b4:fb:e4:29:f5:2b:00:01:5c:7a:60:46:08:00 SRC=91.240.118.71 DST=67.170.194.97 LEN=40 TOS=0x00 PREC=0x00 TTL=228 ID=17185 PROTO=TCP SPT=51980 DPT=4295 WINDOW=1024 RES=0x00 SYN URGP=0\" kernel Warning"
+      "commandLineArgs": "www.thehutt.biz \"CEF:0|carbonblack|CbDefense_Syslog_Connector|2.0|Policy_Action|Confer Sensor Policy Action|4|rt=\\\"Feb 16 2018 23:23:32\\\" dvchost=zewinsevsensor duser=bill@bill.com.com rt=\\\"Feb 16 2018 23:23:32\\\" dvc=172.17.178.130 cs3Label=\\\"Link\\\" cs3=\\\"https://defense-eap01.conferdeploy.net/investigate?s[searchWindow]=ALL&s[c][QUERY_STRING_TYPE][0]=52c1c476103d11e89406216ffd242cdb&s[c][DEVICE_ID][0]=6543\\\" act=None hash=121118a0f5e0e8c933efd28c9901e54e42792619a8a3a6d11e1f0025a7324bc2 deviceprocessname=svchost.exe\" local4 Warning RFC5424"
     }
   }
 }
