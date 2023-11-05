@@ -54,7 +54,7 @@ namespace stumper
             var messageArgument = new Argument<string>(name: "message", description: "The message to send");
 
             //Define Options
-            var fileOption = new Option<FileInfo?>(name: "--file",description: "A file to load and send to the server.  Note:  When used, the 'message' arguement will be ignored but must still be provided");
+            var fileOption = new Option<FileInfo?>(name: "--file",description: "A file to load and send to the server.  Note:  When used, the 'message' argument will be ignored but must still be provided");
             var runForOption = new Option<int>(name: "--runFor", description: "Send the message for a specific period of time in seconds, and then stop");
             runForOption.IsHidden = true; //Hidden for now to finish implementation
             var repeatForOption = new Option<int>(name: "--repeatFor", description: "Sending the message a specific number of times, and then stop.  Default is 1");
