@@ -1,5 +1,5 @@
 # stumper
-##a very (very) simple syslog generator.
+## a very (very) simple syslog generator.
 
 Usage:
 stumper <server> <facility> <severity> <message> [options]
