@@ -2,7 +2,7 @@
   "profiles": {
     "stumper": {
       "commandName": "Project",
-      "commandLineArgs": "40.78.15.78 local0 informational \"TEST\" --file \"C:\\temp\\myfile.txt\" --repeatFor 2 --messageTiming 0"
+      "commandLineArgs": "40.78.15.78 user informational \"TEST\" --file \"C:\\temp\\myfile.txt\" --repeatFor 2 --messageTiming 0"
     }
   }
 }

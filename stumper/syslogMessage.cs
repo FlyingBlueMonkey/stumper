@@ -4,7 +4,7 @@
 // Created          : 06-21-2023
 //
 // Last Modified By : MattEgen
-// Last Modified On : 06-22-2023
+// Last Modified On : 08-06-2023
 // ***********************************************************************
 // <copyright file="syslogMessage.cs" company="stumper">
 //     Copyright (c) . All rights reserved.
@@ -99,21 +99,40 @@ namespace stumper
         /// </summary>
         public MessageHeader header;
 
+        /// <summary>
+        /// Gets or sets the message standard.
+        /// </summary>
+        /// <value>The message standard.</value>
         public MessageStandards MessageStandard { get; set; }
+        /// <summary>
+        /// Enum MessageStandards
+        /// </summary>
         public enum MessageStandards
         {
+            /// <summary>
+            /// The rf C3164
+            /// </summary>
             RFC3164 = 0,
+            /// <summary>
+            /// The rf C5424
+            /// </summary>
             RFC5424 = 1
         }
 
         #endregion
 
         #region Private Variables
+        /// <summary>
+        /// The message body
+        /// </summary>
         private string messageBody = "Stumper - Default Test Message";
 
         #endregion
 
         #region Public Constants
+        /// <summary>
+        /// The nil value
+        /// </summary>
         public const string NilValue = "-";
 
         #endregion
@@ -124,6 +143,13 @@ namespace stumper
         #endregion
 
         #region Creators
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Message"/> class.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="messageStandard">The message standard.</param>
+        /// <param name="facility">The facility.</param>
+        /// <param name="severity">The severity.</param>
         public Message(string message, MessageStandards messageStandard,MessageHeader.FacilityType facility, MessageHeader.SeverityLevel severity) 
         {
             header = new MessageHeader(messageStandard,facility,severity,"Stumper");
@@ -141,6 +167,10 @@ namespace stumper
         #endregion
 
         #region Public Functions
+        /// <summary>
+        /// Gets or sets the message body.
+        /// </summary>
+        /// <value>The message body.</value>
         public string MessageBody
         {
             get
@@ -421,6 +451,10 @@ namespace stumper
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [rf C3164].
+        /// </summary>
+        /// <value><c>true</c> if [rf C3164]; otherwise, <c>false</c>.</value>
         public bool RFC3164
         {
             get
@@ -441,20 +475,37 @@ namespace stumper
         /// </summary>
         /// <value>The pri.</value>
         private string PRI { get; set; }
+        /// <summary>
+        /// The host name
+        /// </summary>
         private string hostName = System.Net.Dns.GetHostEntry("localhost").HostName; //default to the local machine name unless overridden
+        /// <summary>
+        /// The application name
+        /// </summary>
         private string appName = "stumper";
+        /// <summary>
+        /// The process identifier
+        /// </summary>
         private string processId = Process.GetCurrentProcess().Id.ToString();
+        /// <summary>
+        /// The message identifier
+        /// </summary>
         private string messageId = "1";
+        /// <summary>
+        /// The RFC3164
+        /// </summary>
         private bool rfc3164 = false;
         #endregion
 
         #region Constructors
         //HEADER = PRI VERSION SP TIMESTAMP SP HOSTNAME SP APP-NAME SP PROCID SP MSGID
-        /// <summary>Initializes a new instance of the <see cref="T:stumper.MessageHeader" /> class.</summary>
-        /// <param name="rfc3164"></param>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:stumper.MessageHeader" /> class.
+        /// </summary>
+        /// <param name="messageStandard">The message standard.</param>
         /// <param name="facility">The facility.</param>
         /// <param name="severity">The severity.</param>
-        /// <param name="appName"></param>
+        /// <param name="appName">Name of the application.</param>
         public MessageHeader(MessageStandards messageStandard, FacilityType facility, SeverityLevel severity,string appName)
         {
             if(messageStandard == MessageStandards.RFC3164)

@@ -4,7 +4,7 @@
 // Created          : 06-21-2023
 //
 // Last Modified By : MattEgen
-// Last Modified On : 06-22-2023
+// Last Modified On : 11-05-2023
 // ***********************************************************************
 // <copyright file="Program.cs" company="stumper">
 //     Copyright (c) . All rights reserved.
@@ -32,13 +32,13 @@ namespace stumper
     /// </summary>
     internal class Program
     {
-       
-    /// <summary>
-    /// Main as an asynchronous operation.
-    /// </summary>
-    /// <param name="args">The arguments.</param>
-    /// <returns>A Task representing the asynchronous operation.</returns>
-    static async Task Main(string[] args)
+
+        /// <summary>
+        /// Main as an asynchronous operation.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <returns>A Task representing the asynchronous operation.</returns>
+        static async Task Main(string[] args)
         {
             /* New Code:  Adding support for System.CommandLine features
              * Arguements: server, message, facility, severity
@@ -84,6 +84,18 @@ namespace stumper
 
         }
 
+        /// <summary>
+        /// Sends the message.
+        /// </summary>
+        /// <param name="server">The server.</param>
+        /// <param name="facility">The facility.</param>
+        /// <param name="severity">The severity.</param>
+        /// <param name="messageToSend">The message to send.</param>
+        /// <param name="file">The file.</param>
+        /// <param name="runFor">The run for.</param>
+        /// <param name="repeatFor">The repeat for.</param>
+        /// <param name="messageTiming">The message timing.</param>
+        /// <param name="standard">The standard.</param>
         static async void SendMessage(string server, MessageHeader.FacilityType facility, MessageHeader.SeverityLevel severity, string messageToSend, FileInfo? file = null, int runFor = 1, int repeatFor = 1, int messageTiming = 1000, Message.MessageStandards standard = Message.MessageStandards.RFC5424)
         {
 
@@ -113,6 +125,13 @@ namespace stumper
 
             }
         }
+        /// <summary>
+        /// Sends the message.
+        /// </summary>
+        /// <param name="ipAddress">The ip address.</param>
+        /// <param name="facility">The facility.</param>
+        /// <param name="severity">The severity.</param>
+        /// <param name="messageToSend">The message to send.</param>
         static async void SendMessage(IPAddress ipAddress, MessageHeader.FacilityType facility, MessageHeader.SeverityLevel severity, string messageToSend)
         {
             Message message = new Message(messageToSend, Message.MessageStandards.RFC5424, facility, severity);
@@ -133,12 +152,8 @@ namespace stumper
         /// <summary>
         /// Resolves an address to an Ip
         /// </summary>
-        /// <param name="server">
-        /// The server.
-        /// </param>
-        /// <returns>
-        /// IPAddress.
-        /// </returns>
+        /// <param name="server">The server.</param>
+        /// <returns>IPAddress.</returns>
         private static async Task<IPAddress> ResolveAddress(string server)
         {
             IPAddress ipAddress;
