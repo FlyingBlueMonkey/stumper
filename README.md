@@ -1,3 +1,4 @@
+![Stumper Logo](https://github.com/flyingbluemonkey/stumper/blob/master/Stumper.png?raw=true)
 # stumper
 ## a very (very) simple syslog generator.
 
