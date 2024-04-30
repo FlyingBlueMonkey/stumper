@@ -96,7 +96,7 @@ namespace stumper
         /// <param name="repeatFor">The repeat for.</param>
         /// <param name="messageTiming">The message timing.</param>
         /// <param name="standard">The standard.</param>
-        static async void SendMessage(string server, MessageHeader.FacilityType facility, MessageHeader.SeverityLevel severity, string messageToSend, FileInfo? file = null, int runFor = 1, int repeatFor = 0, int messageTiming = 1000, Message.MessageStandards standard = Message.MessageStandards.RFC5424)
+        static async void SendMessage(string server, MessageHeader.FacilityType facility, MessageHeader.SeverityLevel severity, string messageToSend, FileInfo? file = null, int runFor = 1, int repeatFor = 1, int messageTiming = 1000, Message.MessageStandards standard = Message.MessageStandards.RFC5424)
         {
 
             IPAddress ipAddress = await ResolveAddress(server); //Check / Resolve the server to an IpAddress
