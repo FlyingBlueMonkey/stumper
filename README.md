@@ -148,7 +148,3 @@ This tool is intended to behave like a typical CLI:
 - **DNS name fails**: try using an IP address for `<server>`.
 - **Receiver complains about format**: try `--messageStandard RFC3164` or `--messageStandard RFC5424`.
 - **Using `--file`**: remember you still must provide a `<message>` argument (it will be ignored).
-
-## License
-
-No license file is currently included in this repository. If you intend others to reuse this tool, consider adding a LICENSE.
